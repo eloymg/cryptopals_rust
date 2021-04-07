@@ -1,5 +1,3 @@
-extern crate hex;
-
 pub fn xor_strings(input_1: &str, input_2: &str) -> String {
     let mut bytes = Vec::new();
     for i in 0..(input_1.len() / 2) {

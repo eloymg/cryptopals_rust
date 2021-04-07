@@ -1,5 +1,6 @@
 mod one_dot_one;
 mod one_dot_two;
+mod one_dot_three;
 
 fn main() {
     // 1.1
@@ -11,6 +12,9 @@ fn main() {
     let input_2 = "686974207468652062756c6c277320657965";
     let result = "746865206b696420646f6e277420706c6179";
     assert_eq!(one_dot_two::xor_strings(input_1, input_2), result);
+    // 1.3
+    let input = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736";
+    one_dot_three::decrypt_xor_chiper(input);
 
     println!("All exercises are OK!");
 }
