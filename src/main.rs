@@ -14,7 +14,8 @@ fn main() {
     assert_eq!(one_dot_two::xor_strings(input_1, input_2), result);
     // 1.3
     let input = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736";
-    one_dot_three::decrypt_xor_chiper(input);
+    let result = "Cooking MC\'s like a pound of bacon";
+    assert_eq!(one_dot_three::decrypt_xor_chiper(input), result);
 
     println!("All exercises are OK!");
 }
