@@ -2,6 +2,7 @@ mod one_dot_one;
 mod one_dot_two;
 mod one_dot_three;
 mod one_dot_four;
+mod one_dot_five;
 
 fn main() {
     // 1.1
@@ -19,9 +20,15 @@ fn main() {
     assert_eq!(one_dot_three::decrypt_xor_chiper(input), result);
 
     // 1.4
-    let input = "src/files/4.txt";
-    let result = "Now that the party is jumping";
+    let input = include_str!("files/4.txt");
+    let result = "Now that the party is jumping\n";
     assert_eq!(one_dot_four::find_xor_chiper(input, result), result);
+
+    // 1.5
+    let key = "ICE";
+    let input = "Burning 'em, if you ain't quick and nimble\nI go crazy when I hear a cymbal";
+    let result = "0b3637272a2b2e63622c2e69692a23693a2a3c6324202d623d63343c2a26226324272765272a282b2f20430a652e2c652a3124333a653e2b2027630c692b20283165286326302e27282f";
+    assert_eq!(one_dot_five::xor_chiper(key, input), result);
 
     println!("All exercises are OK!");
 }
