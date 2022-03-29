@@ -1,6 +1,7 @@
 mod one_dot_one;
 mod one_dot_two;
 mod one_dot_three;
+mod one_dot_four;
 
 fn main() {
     // 1.1
@@ -16,6 +17,11 @@ fn main() {
     let input = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736";
     let result = "Cooking MC\'s like a pound of bacon";
     assert_eq!(one_dot_three::decrypt_xor_chiper(input), result);
+
+    // 1.4
+    let input = "src/files/4.txt";
+    let result = "Now that the party is jumping";
+    assert_eq!(one_dot_four::find_xor_chiper(input, result), result);
 
     println!("All exercises are OK!");
 }

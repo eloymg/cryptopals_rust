@@ -19,7 +19,17 @@ pub fn decrypt_xor_chiper(input: &str) -> String{
             final_bytes = bytes
         }
     }
-    return str::from_utf8(final_bytes.as_slice()).unwrap().to_owned();
+    match str::from_utf8(final_bytes.as_slice()){
+        Ok(valid) => {
+            return valid.to_owned()
+        }
+        Err(_) => {
+            return String::from("Error")
+        }
+    }
+
+
+    //return str::from_utf8(final_bytes.as_slice()).unwrap().to_owned();
 
 }
 fn count_printable_chars(slice: &[u8]) -> i32 {
